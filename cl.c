@@ -1,3 +1,7 @@
+/*
+ * RPN Calculator
+ *
+ */
 #include <stdio.h>
 #include "cl_cal.h"
 
