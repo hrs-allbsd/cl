@@ -7,7 +7,7 @@ all: ${PROG}
 .SUFFIXES: .c .o
 
 .c.o:
-	cc -c -o ${.TARGET} ${.IMPSRC}
+	cc -DDEBUG -c -o ${.TARGET} ${.IMPSRC}
 
 cl.o: cl_cal.h
 cl_cal.o: cl_cal.h
@@ -20,4 +20,6 @@ clean:
 install:
 	cp ${PROG} /usr/local/bin
 test:
-	./${PROG} 1 2 3 4 5 + + +
+	-./${PROG} 1 2 3 4 + 5 + + + x
+	-./${PROG} 1 2 3 4 + 5 5 - / + + x
+	./${PROG} 1 2 3 4 + 5 6 + + + x
