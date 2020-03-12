@@ -52,24 +52,24 @@ cal(int argc, char *argv[], int *status)
 			switch (argv[i][0]) {
 			case '+':
 				DEBUG_PRINT(st[pos - 2], st[pos - 1], +);
-				st[pos - 2] = st[pos - 2] + st[pos - 1];
+				st[pos - 2] += st[pos - 1];
 				break;
 			case '-':
 				DEBUG_PRINT(st[pos - 2], st[pos - 1], -);
-				st[pos - 2] = st[pos - 2] - st[pos - 1];
+				st[pos - 2] -= st[pos - 1];
 				break;
 			case 'x':
 				DEBUG_PRINT(st[pos - 2], st[pos - 1], *);
-				st[pos - 2] = st[pos - 2] * st[pos - 1];
+				st[pos - 2] *= st[pos - 1];
 				break;
 			case '/':
-						/* ERR: division by zero */
 				if (st[pos - 1] == 0) {
+						/* ERR: division by zero */
 					*status = STATUS_DIV0;
 					return (0);
 				}
 				DEBUG_PRINT(st[pos - 2], st[pos - 1], /);
-				st[pos - 2] = st[pos - 2] / st[pos - 1];
+				st[pos - 2] /= st[pos - 1];
 				break;
 			default:
 						/* ERR: unknown op */
