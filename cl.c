@@ -16,7 +16,7 @@ main(int argc, char *argv[])
 	if (status == STATUS_OK)
 		printf("result = %d\n", result);
 	else
-		printf("ERR: %d\n", status);
+		printf("ERR: %s\n", str_status_err(status));
 
 	return (0);
 }
