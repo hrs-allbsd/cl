@@ -1,6 +1,7 @@
 PROG=	cl
 SRCS=	cl.c cl_cal.c
 MK_MAN=	no
+CFLAGS+=	-DDEBUG
 
 install:
 	cp ${PROG} /usr/local/bin
