@@ -12,6 +12,7 @@ main(int argc, char *argv[])
 	int result;
 	int status;
 
+	
 	result = cal(argc, argv, &status);
 	if (status == STATUS_OK)
 		printf("result = %d\n", result);
