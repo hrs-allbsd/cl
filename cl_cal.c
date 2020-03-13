@@ -45,7 +45,7 @@ cal(int argc, char *argv[], int *status)
 				*status = STATUS_INVALID_OP;
 				return (0);
 			}
-			if (pos < 1) {		/* ERR: too few params */
+			if (pos < 2) {		/* ERR: too few params */
 				*status = STATUS_STACK_UNDERFLOW;
 				return (0);
 			}
